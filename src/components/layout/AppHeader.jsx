@@ -5,6 +5,7 @@ export default function AppHeader() {
                 <a href="./" className="text-xl">
                     GameExplorer
                 </a>
+                <nav></nav>
             </div>
         </header>
     );
