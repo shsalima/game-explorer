@@ -27,7 +27,7 @@ export default function TrendingGames() {
     return (
         <section className="py-10">
             <SectionTitle category={"Hot Right Now"} title={"Trending Games"} />
-            <div className="grid grid-cols-12">
+            <div className="grid grid-cols-12 gap-5">
                 {trendingGames && trendingGamesList}
             </div>
         </section>
