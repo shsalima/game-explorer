@@ -1,0 +1,73 @@
+.creator-card {
+  background: #0f172a;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  color: white;
+}
+.name {
+  font-size: 32px;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+.creator-image {
+  height: 300px;
+
+  overflow: hidden;
+  position: relative;
+}
+.creator-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(14, 22, 40, 1) 0%, transparent 50%);
+}
+.creator-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.roles {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #38bdf8;
+  margin-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.badge {
+  background: #1e293b;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.stats {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.stats > div {
+  flex: 1;
+  padding: 12px;
+  text-align: center;
+}
+.stats .title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #8894b0;
+}
+.stats .num {
+  font-size: 22px;
+  color: #38bdf8;
+}
