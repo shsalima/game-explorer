@@ -1,7 +1,11 @@
+import HomeHero from "../components/home/HomeHero";
+
 export default function HomePage() {
     return (
-        <div>
-            <h1>This is the home page</h1>
+        <div className="bg-[#080b10]">
+            <div className="container">
+                <HomeHero />
+            </div>
         </div>
     );
 }
