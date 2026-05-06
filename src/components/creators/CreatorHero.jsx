@@ -2,7 +2,7 @@
 export default function CreatorHero() {
     return (
         <div className="min-h-screen bg-[#020617] text-white">
-            {/* Hero Section */}
+         
             <div className="bg-[#0f172a66] border-b border-slate-800 py-16">
                 <div className="container mx-auto px-4">
                     <div className="flex items-center gap-2 mb-4">

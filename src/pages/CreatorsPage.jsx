@@ -1,3 +1,4 @@
+import CreatorHero from "../components/creators/CreatorHero";
 
 
 export default function CreatorsPage(){
@@ -5,6 +6,7 @@ export default function CreatorsPage(){
         <div>
             <div className="container">
                 hy drary
+                <CreatorHero/>
             </div>
 
         </div>
