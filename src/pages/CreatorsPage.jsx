@@ -1,12 +1,13 @@
+import CartCreator from "../components/creators/CartCreator";
 import CreatorHero from "../components/creators/CreatorHero";
 
 
 export default function CreatorsPage(){
     return(
-        <div>
+        <div className="bg-[#020617]">
             <div className="container">
-                hy drary
                 <CreatorHero/>
+                <CartCreator/>
             </div>
 
         </div>
