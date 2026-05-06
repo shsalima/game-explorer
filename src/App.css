@@ -40,3 +40,7 @@ body {
         max-width: 1320px;
     }
 }
+
+.main-transition {
+    transition: 0.3s;
+}
