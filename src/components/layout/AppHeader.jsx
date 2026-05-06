@@ -1,9 +1,11 @@
 import { RiMenuLine } from "@remixicon/react";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import MobileNav from "./MobileNav";
 import { useState } from "react";
 
 export default function AppHeader() {
+    const { pathname } = useLocation();
+
     const links = [
         {
             id: 1,
@@ -26,7 +28,9 @@ export default function AppHeader() {
         <li key={link.id}>
             <Link
                 to={link.path}
-                className="font-bold uppercase px-4 py-2 hover:bg-[#2563eb80] hover:text-[#38BDF8] transition"
+                className={`block text-center font-bold uppercase w-[100px] py-1 hover:bg-[#2563eb80] hover:text-[#38BDF8] main-transition ${
+                    link.path == pathname ? "bg-[#2563eb80] text-[#38BDF8]" : ""
+                }`}
             >
                 {link.title}
             </Link>
