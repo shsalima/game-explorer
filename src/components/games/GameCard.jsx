@@ -9,7 +9,7 @@ export default function TrendingGames({ game }) {
                     <img
                         src={game.background_image}
                         alt={game.name}
-                        className="w-full max-h-[165px]"
+                        className="w-full h-[165px]"
                     />
                     <div className="p-4">
                         <h3 className="text-white font-bold">{game.name}</h3>
