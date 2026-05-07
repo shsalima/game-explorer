@@ -44,7 +44,7 @@ export default function CartCreator(){
                                 
                                 <div className="relative h-64 overflow-hidden">
                                     <img 
-                                        src={creator.image_background} 
+                                        src={creator.image} 
                                         alt={creator.name}
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                     />
@@ -61,7 +61,7 @@ export default function CartCreator(){
                                     
                                     <div className="flex flex-wrap gap-2">
                                         {creator.games.slice(0, 2).map((game) => (
-                                            <span key={game.id} className="text-[10px] bg-[#1e293b] text-slate-300 px-3 py-1 rounded-md border border-slate-700">
+                                            <span key={game.id} className="text-[10px] bg-[#2563eb4d] text-slate-300 px-3 py-1 rounded-md border border-slate-700">
                                                 {game.name}
                                             </span>
                                         ))}
