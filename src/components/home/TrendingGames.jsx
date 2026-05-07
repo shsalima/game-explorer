@@ -39,7 +39,7 @@ export default function TrendingGames() {
             )}
             <Link
                 to="/games"
-                className="block w-fit bg-[linear-gradient(to_right,#2563eb,#1a3a8f)] text-white text-center font-bold px-4 py-3 mt-4 mx-auto rounded-md cursor-pointer"
+                className="block w-fit bg-[linear-gradient(to_right,#2563eb,#1a3a8f)] text-white text-center font-bold px-4 py-3 mt-10 mx-auto rounded-md cursor-pointer"
             >
                 Browse More Games
             </Link>
