@@ -8,24 +8,21 @@ export default function AppHeader() {
 
     const links = [
         {
-            id: 1,
             title: "home",
             path: "/",
         },
         {
-            id: 1,
             title: "games",
             path: "/games",
         },
         {
-            id: 1,
             title: "creators",
             path: "/creators",
         },
     ];
 
-    const navList = links.map((link) => (
-        <li key={link.id}>
+    const navList = links.map((link, i) => (
+        <li key={i}>
             <Link
                 to={link.path}
                 className={`block text-center font-bold uppercase w-[100px] py-1 hover:bg-[#2563eb80] hover:text-[#38BDF8] main-transition ${
