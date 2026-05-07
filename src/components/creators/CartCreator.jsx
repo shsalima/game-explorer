@@ -1,4 +1,5 @@
 import axios from "axios"
+import { Link } from "react-router"
 import { useEffect, useState } from "react"
 
 
@@ -38,7 +39,9 @@ export default function CartCreator(){
                 ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {creators.map((creator) => (
-                            <div key={creator.id} className="group bg-[#0f172a] border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 transition-all duration-300">
+                                <Link to={`/creators/${creator.id}`} key={creator.id} >
+                            <div className="group bg-[#0f172a] border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 transition-all duration-300">
+                                
                                 <div className="relative h-64 overflow-hidden">
                                     <img 
                                         src={creator.image_background} 
@@ -65,7 +68,10 @@ export default function CartCreator(){
                                     </div>
                                 </div>
                             </div>
+                                </Link>
                         ))}
+
+
                     </div>
                 )}
             </div>
