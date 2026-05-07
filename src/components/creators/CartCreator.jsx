@@ -16,7 +16,7 @@ export default function CartCreator(){
             try{
                 const response=await axios.get(`${VITE_API_URL}/creators?key=${VITE_API_KEY}`)
               
-                console.log(response)
+                // console.log(response)
                 setCreators(response.data.results)
                 setLoading(false)
             }catch(error){
