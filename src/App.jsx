@@ -2,6 +2,7 @@ import "./App.css";
 import AppHeader from "./components/layout/AppHeader";
 import { Routes, Route } from "react-router";
 import HomePage from "./pages/HomePage";
+import DevelopersTeam from "./pages/DevelopersTeam";
 
 function App() {
     return (
@@ -9,6 +10,7 @@ function App() {
             <AppHeader />
             <Routes>
                 <Route path="/" element={<HomePage />} />
+                <Route path="/games/:gameId/Developers-team" element={<DevelopersTeam/>} />
             </Routes>
         </>
     );
