@@ -15,34 +15,40 @@ export default function CreatorProfileCard() {
 
   return (
     <div className="creator-card">
-      <div className="creator-image">
+      <div className="creator-image rounded-md overflow-hidden">
         <img src={creator.image} alt={creator.name} className="creator-image" />
       </div>
+      <div style={{ padding: "15px" }}>
+        <h2 className="name">{creator.name}</h2>
 
-      <h2 className="name">{creator.name}</h2>
-
-      <div className="roles">
-        {creator.roles.map((role, index) => (
-          <span key={index} className="badge">
-            {role}
-          </span>
-        ))}
-      </div>
-
-      <div className="stats">
-        <div>
-          <strong className="num">{creator.stats.games}</strong>
-          <p className="title">Games</p>
+        <div className="roles">
+          {creator.roles.map((role, index) => (
+            <span key={index} className="">
+              {role} ·
+            </span>
+          ))}
         </div>
 
-        <div>
-          <strong className="num">{creator.stats.rating}</strong>
-          <p className="title">Avg Score</p>
-        </div>
+        <div className="stats">
+          <div>
+            <strong className="num">{creator.stats.games}</strong>
+            <p className="title">Games</p>
+          </div>
 
-        <div>
-          <strong className="num">{creator.stats.since}</strong>
-          <p className="title">Since</p>
+          <div>
+            <strong className="num">{creator.stats.rating}</strong>
+            <p className="title">Avg Score</p>
+          </div>
+
+          <div>
+            <strong className="num">{creator.stats.since}</strong>
+            <p className="title">Since</p>
+          </div>
+        </div>
+        <div className="creator-info">
+          <span>Director</span>
+          <span>Writer</span>
+          <span>Designer</span>
         </div>
       </div>
     </div>
