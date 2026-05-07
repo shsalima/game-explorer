@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { RiStarFill } from "@remixicon/react";
 
-export default function TrendingGames({ game }) {
+export default function GameCard({ game }) {
     return (
         <div className="col-span-12 md:col-span-6 lg:col-span-4">
             <Link to={`/games/${game.id}`}>
