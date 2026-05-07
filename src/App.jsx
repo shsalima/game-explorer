@@ -2,7 +2,7 @@ import "./App.css";
 import AppHeader from "./components/layout/AppHeader";
 import { Routes, Route } from "react-router";
 import HomePage from "./pages/HomePage";
-import CreatorDetailsPage from "./pages/CreatorDetailsPage";
+import GamesPage from "./pages/GamesPage";
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
       <AppHeader />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/games" element={<GamesPage />} />
         <Route path="/details" element={<CreatorDetailsPage />} />
       </Routes>
     </>
