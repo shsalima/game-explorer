@@ -3,7 +3,7 @@ import GamesList from "../components/games/GamesList";
 
 export default function GamesPage() {
     return (
-        <div className="bg-[#080b10] py-10">
+        <div className="bg-[#080b10] min-h-[calc(100vh-68px)] py-10">
             <div className="container">
                 <SectionTitle category={"Explore"} title={"All Games"} />
                 <p className="text-white">

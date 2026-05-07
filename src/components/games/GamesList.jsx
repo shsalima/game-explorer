@@ -23,9 +23,15 @@ export default function GamesList() {
     }
     return (
         <section className="py-10">
-            <div className="grid grid-cols-12 justify-center items-start gap-8">
-                {games && gamesList}
-            </div>
+            {games ? (
+                <div className="grid grid-cols-12 justify-center items-start gap-8">
+                    {gamesList}
+                </div>
+            ) : (
+                <div className="loading my-10">
+                    <div className="loader"></div>
+                </div>
+            )}
         </section>
     );
 }

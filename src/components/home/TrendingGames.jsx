@@ -28,9 +28,15 @@ export default function TrendingGames() {
     return (
         <section className="py-10">
             <SectionTitle category={"Hot Right Now"} title={"Trending Games"} />
-            <div className="grid grid-cols-12 justify-center items-start gap-8">
-                {trendingGames && trendingGamesList}
-            </div>
+            {trendingGames ? (
+                <div className="grid grid-cols-12 justify-center items-start gap-8">
+                    {trendingGamesList}
+                </div>
+            ) : (
+                <div className="loading my-10">
+                    <div className="loader"></div>
+                </div>
+            )}
             <Link
                 to="/games"
                 className="block w-fit bg-[linear-gradient(to_right,#2563eb,#1a3a8f)] text-white text-center font-bold px-4 py-3 mt-4 mx-auto rounded-md cursor-pointer"

@@ -48,7 +48,9 @@ export default function HomeHero() {
                 {heroGame ? (
                     <HeroGame heroGame={heroGame} />
                 ) : (
-                    <p className="text-white">loading...</p>
+                    <div className="loading">
+                        <div className="loader"></div>
+                    </div>
                 )}
             </div>
         </main>
