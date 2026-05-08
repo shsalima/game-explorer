@@ -37,7 +37,7 @@ export default function AppHeader() {
     const [showMobileNav, setShowMobileNav] = useState(false);
 
     return (
-        <header className="bg-[#010102] text-white py-5">
+        <header className="sticky top-0 z-20 bg-[#010102] text-white py-5">
             <div className="container flex justify-between items-center">
                 <Link
                     to="/"

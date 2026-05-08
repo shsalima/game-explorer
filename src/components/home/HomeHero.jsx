@@ -20,7 +20,10 @@ export default function HomeHero() {
 
     return (
         <main className="h-[calc(100vh-68px)] flex justify-between items-center">
-            <div id="content" className="w-[48%] text-white">
+            <div
+                id="content"
+                className="lg:w-[48%] text-white max-lg:text-center"
+            >
                 <h1 className="text-7xl font-bold">
                     EXPLORE <br /> THE <br /> UNIVERSE
                 </h1>
@@ -29,7 +32,7 @@ export default function HomeHero() {
                     explore detailed game info, and connect with the developers
                     who built them.
                 </p>
-                <div className="flex gap-3 mt-4">
+                <div className="flex max-lg:justify-center gap-3 mt-4">
                     <Link
                         to="/games"
                         className="w-[150px] bg-[linear-gradient(to_right,#2563eb,#1a3a8f)] text-center font-bold py-3 rounded-md cursor-pointer"
@@ -44,7 +47,7 @@ export default function HomeHero() {
                     </Link>
                 </div>
             </div>
-            <div id="main-game" className="w-[48%]">
+            <div id="main-game" className="lg:w-[48%] max-lg:hidden">
                 {heroGame ? (
                     <HeroGame heroGame={heroGame} />
                 ) : (
