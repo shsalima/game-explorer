@@ -3,6 +3,7 @@
 
 body {
     font-family: "Rajdhani", sans-serif;
+    background-color: #080b10;
 }
 
 .container {
@@ -45,7 +46,6 @@ body {
     transition: 0.3s;
 }
 
-/* HTML: <div class="loader"></div> */
 .loader {
     width: 50px;
     margin-left: auto;

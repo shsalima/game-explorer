@@ -1,6 +1,41 @@
 import { RiStarFill } from "@remixicon/react";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import FailError from "../global/FailError";
 
-export default function HeroGame({ heroGame }) {
+export default function HeroGame() {
+    const { VITE_API_URL, VITE_API_KEY } = import.meta.env;
+    const [loading, setLoading] = useState(true);
+    const [heroGame, setHeroGame] = useState(null);
+    const [error, setError] = useState(false);
+
+    useEffect(() => {
+        axios
+            .get(`${VITE_API_URL}/games/28?key=${VITE_API_KEY}`)
+            .then((res) => {
+                setHeroGame(res.data);
+            })
+            .catch((error) => {
+                console.log(error);
+                setError(true);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+    }, []);
+
+    if (loading) {
+        return (
+            <div className="loading">
+                <div className="loader"></div>
+            </div>
+        );
+    }
+
+    if (error) {
+        return <FailError />;
+    }
+
     return (
         <div>
             <div

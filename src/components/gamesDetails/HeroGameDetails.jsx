@@ -2,12 +2,14 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams, useLocation, Link } from "react-router-dom";
 import GamesSimilair from "./GamesSimilair";
+import FailError from "../global/FailError";
 
 export default function HeroGameDetails() {
   const { gameId } = useParams();
-  console.log(gameId);
+  // console.log(gameId);
   const [game, setGame] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   const { VITE_API_KEY, VITE_API_URL } = import.meta.env;
 
@@ -15,35 +17,33 @@ export default function HeroGameDetails() {
     const fectGameDetals = async () => {
       try {
         const response = await axios.get(
-          `${VITE_API_URL}/games/${gameId}?key=${VITE_API_KEY}`,
+          `${VITE_API_URL}/games/${gameId}?kdey=${VITE_API_KEY}`,
         );
        
         setGame(response.data);
         setLoading(false);
       } catch (error) {
-       
+         console.log(error);
+         setError(true);
         setLoading(false);
       }
     };
     fectGameDetals();
   }, [gameId]);
 
-  console.log(game);
+  // console.log(game);
 
-  if (loading) {
-    return (
-      <div className="loading my-10">
-        <div className="loader"></div>
-      </div>
-    );
-  }
-
-  if (!game) {
-    return <div className="p-10">Game not found or loading...</div>;
-  }
-    if (loading) {
-    return <div className="min-h-screen bg-[#0b121c] flex items-center justify-center"><div className="loader"></div></div>;
-  }
+     if (loading) {
+          return (
+              <div className="loading">
+                  <div className="loader"></div>
+              </div>
+          );
+      }
+  
+      if (error) {
+          return <FailError />;
+      }
 
   return (
     <div className="min-h-screen bg-[#0b121c] text-white font-sans">
