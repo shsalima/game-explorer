@@ -1,23 +1,7 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
 import HeroGame from "./HeroGame";
 import { Link } from "react-router";
 
 export default function HomeHero() {
-    const { VITE_API_URL, VITE_API_KEY } = import.meta.env;
-    const [heroGame, setHeroGame] = useState(null);
-
-    useEffect(() => {
-        axios
-            .get(`${VITE_API_URL}/games/28?key=${VITE_API_KEY}`)
-            .then((res) => {
-                setHeroGame(res.data);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }, []);
-
     return (
         <main className="h-[calc(100vh-68px)] flex justify-between items-center">
             <div
@@ -48,13 +32,7 @@ export default function HomeHero() {
                 </div>
             </div>
             <div id="main-game" className="lg:w-[48%] max-lg:hidden">
-                {heroGame ? (
-                    <HeroGame heroGame={heroGame} />
-                ) : (
-                    <div className="loading">
-                        <div className="loader"></div>
-                    </div>
-                )}
+                <HeroGame />
             </div>
         </main>
     );

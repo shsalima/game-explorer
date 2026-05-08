@@ -3,7 +3,7 @@ import TrendingGames from "../components/home/TrendingGames";
 
 export default function HomePage() {
     return (
-        <div className="bg-[#080b10]">
+        <div className="bg-[#080b10] py-10">
             <div className="container">
                 <HomeHero />
                 <TrendingGames />

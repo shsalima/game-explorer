@@ -2,7 +2,7 @@ import { RiSearchLine } from "@remixicon/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export default function FilterSection({ setGames }) {
+export default function FilterSection({ setGames, setLoading, setError }) {
     const { VITE_API_URL, VITE_API_KEY } = import.meta.env;
 
     const [filterValues, setFilterValues] = useState({
@@ -39,6 +39,10 @@ export default function FilterSection({ setGames }) {
             })
             .catch((error) => {
                 console.log(error);
+                setError(true);
+            })
+            .finally(() => {
+                setLoading(false);
             });
     }, [filterValues]);
     return (
