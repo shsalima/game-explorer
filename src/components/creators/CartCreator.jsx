@@ -1,4 +1,5 @@
 import axios from "axios"
+import { Link } from "react-router"
 import { useEffect, useState } from "react"
 
 
@@ -38,10 +39,12 @@ export default function CartCreator(){
                 ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {creators.map((creator) => (
-                            <div key={creator.id} className="group bg-[#0f172a] border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 transition-all duration-300">
+                                <Link to={`/creators/${creator.id}`} key={creator.id} >
+                            <div className="group bg-[#0f172a] border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500/50 transition-all duration-300">
+                                
                                 <div className="relative h-64 overflow-hidden">
                                     <img 
-                                        src={creator.image_background} 
+                                        src={creator.image} 
                                         alt={creator.name}
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                     />
@@ -58,14 +61,17 @@ export default function CartCreator(){
                                     
                                     <div className="flex flex-wrap gap-2">
                                         {creator.games.slice(0, 2).map((game) => (
-                                            <span key={game.id} className="text-[10px] bg-[#1e293b] text-slate-300 px-3 py-1 rounded-md border border-slate-700">
+                                            <span key={game.id} className="text-[10px] bg-[#2563eb4d] text-slate-300 px-3 py-1 rounded-md border border-slate-700">
                                                 {game.name}
                                             </span>
                                         ))}
                                     </div>
                                 </div>
                             </div>
+                                </Link>
                         ))}
+
+
                     </div>
                 )}
             </div>
