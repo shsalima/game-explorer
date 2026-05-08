@@ -17,7 +17,7 @@ export default function HeroGameDetails() {
     const fectGameDetals = async () => {
       try {
         const response = await axios.get(
-          `${VITE_API_URL}/games/${gameId}?kdey=${VITE_API_KEY}`,
+          `${VITE_API_URL}/games/${gameId}?key=${VITE_API_KEY}`,
         );
        
         setGame(response.data);
