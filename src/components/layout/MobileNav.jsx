@@ -32,7 +32,7 @@ export default function MobileNav({ setShowMobileNav }) {
     ));
 
     return (
-        <div className="bg-[#010102] text-white py-5 fixed inset-0 w-screen h-screen z-10">
+        <div className="bg-[#010102] text-white py-5 fixed inset-0 w-screen h-screen z-50">
             <div
                 className="container"
                 onClick={() => {
