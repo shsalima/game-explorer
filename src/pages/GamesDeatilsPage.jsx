@@ -1,10 +1,11 @@
+import HeroGameDetails from "../components/gamesDetails/HeroGameDetails";
 
 
 
 export default function GamesDetailsPage(){
     return(
         <div >
-            osd
+            <HeroGameDetails/>
                   
         </div>
     )
