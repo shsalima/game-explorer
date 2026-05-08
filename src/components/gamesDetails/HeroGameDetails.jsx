@@ -122,6 +122,14 @@ export default function HeroGameDetails() {
         </div>
       </div>
       <GamesSimilair gameId={game.id} gameGenre={game.genres[0].slug}/>
+      <div className="container pb-6">
+          <Link 
+            to={`/games/${game.id}/developers-team`} 
+            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg uppercase tracking-widest text-sm transition-all shadow-lg shadow-blue-600/20 active:scale-95"
+          >
+            View Developer Team
+          </Link>
+        </div>
     </div>
   );
 }

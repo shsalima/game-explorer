@@ -31,7 +31,7 @@ export default function GamesSimilair({ gameId, gameGenre }) {
   }
 
   return (
-    <div className="min-h-screen bg-[#0b121c] text-white font-sans p-4 md:p-8">
+    <div className=" bg-[#0b121c] text-white font-sans p-4 md:p-8">
       <div className="max-w-7xl mx-auto">
         <section className="mt-12">
           <h2 className="text-xl font-bold border-l-4 border-blue-500 pl-3 mb-6 uppercase italic">
