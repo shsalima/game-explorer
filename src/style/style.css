@@ -1,0 +1,138 @@
+body {
+  /* font-family: "Exo 2", sans-serif; */
+  background-color: #080b10;
+}
+
+.creator-card {
+  background: #0f172a;
+  border-radius: 12px;
+  width: 300px;
+  color: white;
+  position: sticky;
+  top: 80px;
+}
+.name {
+  font-size: 32px;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+.creator-image {
+  height: 300px;
+
+  overflow: hidden;
+  position: relative;
+}
+.creator-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(14, 22, 40, 1) 0%, transparent 50%);
+}
+.creator-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.roles {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #38bdf8;
+  margin-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+
+.badge {
+  background: #1e293b;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.stats {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.stats > div {
+  flex: 1;
+  padding: 12px;
+  text-align: center;
+}
+.stats .title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #8894b0;
+}
+.stats .num {
+  font-size: 22px;
+  color: #38bdf8;
+}
+.creator-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+.creator-info > span {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 4px;
+  background: rgba(37, 99, 235, 0.25);
+  border: 1px solid rgba(37, 99, 235, 0.45);
+  color: #38bdf8;
+}
+/* ======================= */
+.about-container {
+  width: 730px;
+}
+.creator-detail-layout {
+  display: flex;
+  align-items: start;
+  gap: 40px;
+  padding: 48px;
+}
+
+.section-title {
+  font-family: "Bebas Neue", "sans-serif";
+  font-size: 22px;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+}
+.section-title::before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 20px;
+  background: #2563eb;
+  border-radius: 2px;
+}
+.detail-desc {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(240, 244, 255, 0.75);
+  margin-bottom: 40px;
+}
+
+#creator-des h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
