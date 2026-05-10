@@ -2,7 +2,12 @@ import { RiSearchLine } from "@remixicon/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export default function FilterSection({ setGames, setLoading, setError }) {
+export default function FilterSection({
+    setGamesData,
+    setLoading,
+    setError,
+    currentPage,
+}) {
     const { VITE_API_URL, VITE_API_KEY } = import.meta.env;
 
     const [filterValues, setFilterValues] = useState({
@@ -14,10 +19,11 @@ export default function FilterSection({ setGames, setLoading, setError }) {
         setFilterValues({ ...filterValues, [e.target.name]: e.target.value });
     }
 
+    const gamesPerPage = 9;
     const queries = {
         key: VITE_API_KEY,
-        page_size: 9,
-        page: 1,
+        page_size: gamesPerPage,
+        page: currentPage,
         search: filterValues.search,
     };
 
@@ -35,7 +41,12 @@ export default function FilterSection({ setGames, setLoading, setError }) {
                 params: queries,
             })
             .then((res) => {
-                setGames(res.data.results);
+                const gamesData = {
+                    games: res.data.results,
+                    totalPages: Math.ceil(res.data.count / gamesPerPage),
+                };
+
+                setGamesData(gamesData);
             })
             .catch((error) => {
                 console.log(error);
@@ -44,7 +55,7 @@ export default function FilterSection({ setGames, setLoading, setError }) {
             .finally(() => {
                 setLoading(false);
             });
-    }, [filterValues]);
+    }, [filterValues, currentPage]);
     return (
         <div className="flex gap-5 py-4 mt-6 border-y border-[#2563eb47]">
             <div className="text-[#f0f4ff] w-[250px] relative">

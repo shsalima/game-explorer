@@ -1,12 +1,14 @@
 import axios from "axios"
 import { Link } from "react-router"
 import { useEffect, useState } from "react"
+import FailError from "../global/FailError"
 
 
 
 export default function CartCreator(){
     const [creators,setCreators]=useState([])
     const [loading,setLoading]=useState(true)
+    const [error, setError] = useState(false);
 
 
     const {VITE_API_KEY,VITE_API_URL}=import.meta.env
@@ -21,14 +23,26 @@ export default function CartCreator(){
                 setCreators(response.data.results)
                 setLoading(false)
             }catch(error){
-                console.error("probléme au recupére data",error)
-                setLoading(false)
+                    console.log(error);
+                    setError(true);  
+                    setLoading(false)
             }
 
         }
         getCreatorData()
 
     },[])
+     if (loading) {
+            return (
+                <div className="loading">
+                    <div className="loader"></div>
+                </div>
+            );
+        }
+    
+        if (error) {
+            return <FailError />;
+        }
     return(
         <div className="min-h-screen bg-[#020617] text-white">
             <div className="container mx-auto px-4 py-12">
