@@ -8,51 +8,52 @@ const API_KEY = import.meta.env.VITE_API_KEY;
 const API_URL = import.meta.env.VITE_API_URL;
 
 function DevelopersTeam() {
-   const { gameId} = useParams();
+    const { gameId } = useParams();
 
-  const [team, setTeam] = useState([]);
-  const [loading, setLoading] = useState(true);
+    const [team, setTeam] = useState([]);
+    const [loading, setLoading] = useState(true);
 
- useEffect(() => {
-  setLoading(true);
+    useEffect(() => {
+        fetch(`${API_URL}/games/${gameId}/development-team?key=${API_KEY}`)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log("FULL DATA:", data);
 
-  fetch(`${API_URL}/games/${gameId}/development-team?key=${API_KEY}`)
-    .then((res) => res.json())
-    .then((data) => {
-      console.log("FULL DATA:", data);
+                const teamData = Array.isArray(data)
+                    ? data
+                    : data?.results || [];
 
-      const teamData = Array.isArray(data)
-        ? data
-        : (data?.results || []);
+                setTeam(teamData);
+                setLoading(false);
+            })
+            .catch((error) => {
+                console.log("ERROR:", error);
+                setLoading(false);
+            })
+            .finally(() => {
+                setLoading(true);
+            });
+    }, [gameId]);
 
-      setTeam(teamData);
-      setLoading(false);
-    })
-    .catch((error) => {
-      console.log("ERROR:", error);
-      setLoading(false);
-    });
-}, [gameId]);
+    return (
+        <div>
+            <RenderHeader />
 
-  return (
-    <div>
-      <RenderHeader />
-
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <div className="cards">
-          {team.map((dev, index) => (
-            <RenderTeamCard
-              key={dev.id}
-              name={dev.name}
-              role={dev.position}
-            />
-          ))}
+            {loading ? (
+                <p>Loading...</p>
+            ) : (
+                <div className="cards">
+                    {team.map((dev, index) => (
+                        <RenderTeamCard
+                            key={dev.id}
+                            name={dev.name}
+                            role={dev.position}
+                        />
+                    ))}
+                </div>
+            )}
         </div>
-      )}
-    </div>
-  );
+    );
 }
 
 export default DevelopersTeam;
