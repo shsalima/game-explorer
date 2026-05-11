@@ -1,32 +1,33 @@
 import { RiMenuLine } from "@remixicon/react";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import MobileNav from "./MobileNav";
 import { useState } from "react";
 
 export default function AppHeader() {
+    const { pathname } = useLocation();
+
     const links = [
         {
-            id: 1,
             title: "home",
             path: "/",
         },
         {
-            id: 1,
             title: "games",
             path: "/games",
         },
         {
-            id: 1,
             title: "creators",
             path: "/creators",
         },
     ];
 
-    const navList = links.map((link) => (
-        <li key={link.id}>
+    const navList = links.map((link, i) => (
+        <li key={i}>
             <Link
                 to={link.path}
-                className="font-bold uppercase px-4 py-2 hover:bg-[#2563eb80] hover:text-[#38BDF8] transition"
+                className={`block text-center font-bold uppercase w-[100px] py-1 hover:bg-[#2563eb80] hover:text-[#38BDF8] main-transition ${
+                    link.path == pathname ? "bg-[#2563eb80] text-[#38BDF8]" : ""
+                }`}
             >
                 {link.title}
             </Link>
@@ -36,7 +37,7 @@ export default function AppHeader() {
     const [showMobileNav, setShowMobileNav] = useState(false);
 
     return (
-        <header className="bg-[#010102] text-white py-5">
+        <header className="sticky top-0 z-20 bg-[#010102] text-white py-5">
             <div className="container flex justify-between items-center">
                 <Link
                     to="/"
